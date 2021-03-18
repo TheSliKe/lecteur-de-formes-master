@@ -20,7 +20,7 @@ public class Forme {
     this((int) hautGauche.getX(), (int) hautGauche.getY(), 0, 0);
     estSelectionnee = false;
     this.midiSynth = midiSynth;
-    instrument = 28;
+    instrument = 1;
     colonneJouee = 0;
   }
 
