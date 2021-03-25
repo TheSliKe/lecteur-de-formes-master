@@ -3,24 +3,24 @@ package fr.pgah.java.unbrco.model;
 import fr.pgah.java.son.MidiSynth;
 import java.awt.*;
 
-public class Forme {
+public abstract class Forme{
 
-  private static final Color COULEUR_LIGNE_JOUEE = new Color(230, 158, 60);
+  protected static final Color COULEUR_LIGNE_JOUEE = new Color(230, 158, 60);
 
-  private int x;
-  private int y;
-  private int longueur;
-  private int hauteur;
-  private boolean estSelectionnee;
+  protected int x;
+  protected int y;
+  protected int longueur;
+  protected int hauteur;
+  protected boolean estSelectionnee;
   private MidiSynth midiSynth;
   private int instrument;
-  private int colonneJouee;
+  protected int colonneJouee;
 
-  public Forme(Point hautGauche, MidiSynth midiSynth) {
+  public Forme(Point hautGauche, MidiSynth midiSynth, int instrument) {
     this((int) hautGauche.getX(), (int) hautGauche.getY(), 0, 0);
     estSelectionnee = false;
     this.midiSynth = midiSynth;
-    instrument = 1;
+    this.instrument = instrument;
     colonneJouee = 0;
   }
 

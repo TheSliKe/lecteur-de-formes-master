@@ -1,6 +1,7 @@
 package fr.pgah.java.unbrco.ui.outils;
 
 import fr.pgah.java.unbrco.model.Forme;
+import fr.pgah.java.unbrco.model.Rectangle;
 import fr.pgah.java.unbrco.ui.EditeurDeFormes;
 
 import javax.swing.JButton;
@@ -11,7 +12,7 @@ import java.awt.event.MouseEvent;
 
 public class OutilForme extends Outil {
 
-  private Forme forme;
+  public Forme forme;
 
   public OutilForme(EditeurDeFormes editeur, JComponent parent) {
     super(editeur, parent);
@@ -31,7 +32,7 @@ public class OutilForme extends Outil {
 
   @Override
   public void pressDansZoneDessin(MouseEvent e) {
-    forme = new Forme(e.getPoint(), editeur.getMidiSynth());
+    forme = new Rectangle(e.getPoint(), editeur.getMidiSynth(), 1);
     forme.selectionnerEtJouer();
     forme.setLimites(e.getPoint());
     editeur.ajouterAuDessin(forme);
